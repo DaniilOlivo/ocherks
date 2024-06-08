@@ -1,4 +1,5 @@
 const { connection, models } = require("./db")
+const { hashPassword } = require("./auth")
 
 const arg = process.argv[2]
 
@@ -7,11 +8,11 @@ const mapCommadns = {
         await connection.sync({force: true})
         await models.User.create({
             username: "Angel",
-            password: "MercyHEAL!"
+            password: await hashPassword("MercyHEAL!")
         })
         await models.User.create({
             username: "Sigma",
-            password: "ImCoolSigma"
+            password: await hashPassword("ImCoolSigma")
         })
     }
 }

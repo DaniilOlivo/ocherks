@@ -4,13 +4,23 @@
   "description": "Web application, which is a notebook with links",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env PORT=8000 node index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "db": "node ./server/dbCommands.js"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
   }
 }

@@ -20,10 +20,12 @@ const models = {
     })
 }
 
-connection.authenticate()
+function checkConnection() {
+    connection.authenticate()
     .then(() => console.log("Database connection established"))
     .catch(err => console.log("Database error: ", err))
+}
 
 connection.sync()
 
-module.exports = { connection, models }
+module.exports = { connection, models, checkConnection }
